@@ -35,7 +35,7 @@ document.querySelectorAll('.navbar').forEach((link)=>{
 let titleInput = document.querySelector('#title-input');
 let authorInput = document.querySelector('#author-input');
 
-document.getElementById('form').addEventListener('submit', ()=>{
+document.getElementById('form').addEventListener('submit', (e)=>{
   let book = {
     'title': titleInput.value,
     'author': authorInput.value
@@ -51,24 +51,36 @@ document.getElementById('form').addEventListener('submit', ()=>{
     newbooks.push(book);
     localStorage.setItem('booklist', JSON.stringify(newbooks));
   }
-
 });
 
 let booklist = document.querySelector('.list');
-window.onload=()=>{
+let data = JSON.parse(localStorage.getItem('booklist'));
+
   let str='';
-  if (JSON.parse(localStorage.getItem('booklist')) === null) {
+  if (JSON.parse(localStorage.getItem('booklist')) === null || data.length===0) {
     str=`<li class="list-item">No book stored!</li>`;
   }
   else{
-    let data = JSON.parse(localStorage.getItem('booklist'));
     for(let obj of data){
     str+=`<li class="list-item">
     <p>${obj.title} by ${obj.author}</p>
-    <a href="" class="remove-btn">Remove</a>
+    <a href="" class="remove-btn" id="remove-book">Remove</a>
   </li>`
   }
   }
   booklist.innerHTML=str;
-}
+  
+  document.querySelectorAll('#remove-book').forEach((button, id)=>{
+    button.addEventListener('click', (e)=>{
+      let selectedbook=data[id];
+      let filteredBooks=data.filter((item)=>{
+        return item !== selectedbook;
+      });
+      localStorage.setItem('booklist', JSON.stringify(filteredBooks));
+      let newData=JSON.parse(localStorage.getItem('booklist'));
+      data = newData;
+    });
+  }
+  );
+
 
