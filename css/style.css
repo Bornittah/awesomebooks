@@ -103,6 +103,22 @@ form button {
   color: inherit;
 }
 
+.booklist {
+  display: block;
+}
+
+.addnew {
+  display: none
+}
+
+.contacts {
+  display: none
+}
+
+.footer {
+  bottom: 0;
+}
+
 .nav-link a:active {
   color: #425cec;
 }

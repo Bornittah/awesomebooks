@@ -13,24 +13,23 @@
         <a href="index.html" class="logo">Awesome Books</a>
         <ul class="navbar">
           <li class="nav-link border-right">
-            <a href="">List</a>
+            <a href="#booklist-section" id="bookslist">List</a>
           </li>
           <li class="nav-link border-right">
-            <a href="">Add New</a>
+            <a href="#addnew-section" id="addbooks">Add New</a>
           </li>
           <li class="nav-link">
-            <a href="">Contact</a>
+            <a href="#contact-section" id="contact">Contact</a>
           </li>
         </ul>
       </nav>
       <div class="datetime">
-        <time datetime="">30th may 2022</time>
+        <!-- <time datetime="">30th may 2022</time> -->
       </div>
   </header>
 
   <main>
-    <div>
-      <section class="booklist" id="booklist">
+      <section class="booklist" id="booklist-section">
         <div class="title">
           <h2>All awesome books</h2>
         </div>
@@ -48,7 +47,7 @@
         </div>
       </section>
 
-      <section class="addnew" id="addbook">
+      <section class="addnew" id="addnew-section">
         <div class="title">
           <h2>Add a new book</h2>
         </div>
@@ -63,9 +62,9 @@
         </div>
       </section>
 
-      <section class="contacts" id="contact">
+      <section class="contacts" id="contact-section">
         <div class="title">
-          <h2><h2>Contact Information</h2></h2>
+          <h2>Contact Information</h2>
         </div>
         <div class="container">
           <div class="contact-details">
@@ -79,12 +78,11 @@
           </div>
         </div>
       </section>
-
-    </div>
   </main>
   
-  <footer>
+  <footer class="footer">
     <p>&copy;2022 Awesomebooks, All rights reserved.</p>
   </footer>
+  <script src='js/index.js'></script>
 </body>
 </html>
