@@ -29,3 +29,24 @@ document.querySelectorAll('.navbar').forEach((link)=>{
     });
 });
 });
+
+// storage
+let form = document.querySelector('#form');
+let titleField = document.querySelector('#title-input');
+let authorField = document.querySelector('#author-input');
+
+form.addEventListener('submit', ()=>{
+  let data= {
+    'title':titleField.value,
+    'author':authorField.value
+  }
+  let arr=[];
+  if(JSON.parse(localStorage.getItem('books')===null)){
+    arr.push(data);
+    localStorage.setItem('books', JSON.stringify(arr));
+  }else{
+  let newarr = JSON.parse(localStorage.getItem('books'));
+  newarr.push(data);
+  localStorage.setItem('books', JSON.stringify(newarr));
+  }
+});
