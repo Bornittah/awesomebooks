@@ -29,3 +29,58 @@ document.querySelectorAll('.navbar').forEach((link)=>{
     });
 });
 });
+
+// const form = document.getElementById('form');
+// const title = document.getElementById('title')
+// const author = document.getElementById('author');
+
+// form.addEventListener('submit', (event) => {
+//   let data = {
+//     'title': title.value.trim(),
+//     'author': author.value.trim()
+//   }
+  
+  
+//   if (localStorage.getItem('booklist') === null) {
+//     var booklist = [];
+//     //add objects
+//     booklist.push(data)
+//     localStorage.setItem('books', JSON.stringify(booklist))
+//   } else {
+//     // get the list from local storage
+//     var booklist = JSON.parse(localStorage.getItem('booklist'))
+
+//     //add object
+//     booklist.push(data);
+//     localStorage.setItem('books', JSON.stringify(booklist))
+//   }
+//   event.preventDefault()
+// })
+
+document.getElementById('form').addEventListener('submit', addbook)
+
+function addbook (event) {
+  var title = document.getElementById('title').value.trim()
+  var author = document.getElementById('author').value.trim()
+
+  //creating an object
+  const bookmark = {
+    title: title,
+    author: author
+  }
+
+  var bookmarks = []
+  if (JSON.parse(localStorage.getItem('bookmarks')) === null) {
+    
+    bookmarks.push(bookmark)
+
+    localStorage.setItem('booklist', JSON.stringify(bookmarks))
+  } else {
+    var bookmarks = JSON.parse(localStorage.getItem('bookmarks'))
+    bookmarks.push(bookmark)
+
+    localStorage.setItem('booklist', JSON.stringify(bookmarks))
+  }
+
+  event.preventDefault()
+}
