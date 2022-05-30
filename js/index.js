@@ -54,3 +54,21 @@ document.getElementById('form').addEventListener('submit', ()=>{
 
 });
 
+let booklist = document.querySelector('.list');
+window.onload=()=>{
+  let str='';
+  if (JSON.parse(localStorage.getItem('booklist')) === null) {
+    str=`<li class="list-item">No book stored!</li>`;
+  }
+  else{
+    let data = JSON.parse(localStorage.getItem('booklist'));
+    for(let obj of data){
+    str+=`<li class="list-item">
+    <p>${obj.title} by ${obj.author}</p>
+    <a href="" class="remove-btn">Remove</a>
+  </li>`
+  }
+  }
+  booklist.innerHTML=str;
+}
+
