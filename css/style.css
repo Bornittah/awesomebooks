@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.5rem;
+  padding: 24px;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #9b9e9d;
+  padding: 8px;
+}
+
+.border-right {
+  border-right: 1px solid #9b9e9d;
+}
+
+.logo {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-link a {
+  text-decoration: none;
+  padding: 0 8px;
+  color: inherit;
+}
+
+.datetime {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.title {
+  text-align: center;
+  margin: 12px 0;
+}
+
+.container {
+  width: 100%;
+  margin: 24px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+}
+
+form input {
+  margin: 8px 0;
+  padding: 8px;
+}
+
+.btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+form button {
+  margin: 8px 0;
+  padding: 5px;
+  width: 80px;
+}
+
+.contact-details {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.info {
+  margin: 24px 0;
+}
+
+.list {
+  list-style-type: none;
+  margin: 12px 0;
+  border: 1px solid #9b9e9d;
+  padding: 5px;
+}
+
+.list-item {
+  margin: 4px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.remove-btn {
+  padding: 5px;
+  border: 1px solid #9b9e9d;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-link a:active {
+  color: #425cec;
+}
+
+.nav-link a:hover {
+  color: #425cec;
+}
+
+.nav-link a:focus {
+  color: #425cec;
+}
