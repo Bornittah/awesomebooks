@@ -9,6 +9,10 @@ body {
   padding: 24px;
 }
 
+/* header {
+  position: fixed;
+} */
+
 .menu {
   display: flex;
   justify-content: space-between;
@@ -116,7 +120,9 @@ form button {
 }
 
 .footer {
-  bottom: 0;
+  position: absolute;
+  bottom: 3;
+  top: 90vh;
 }
 
 .nav-link a:active {
